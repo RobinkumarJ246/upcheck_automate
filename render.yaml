@@ -36,4 +36,4 @@ services:
 
 databases:
   - name: n8n-db
-    plan: starter
+    plan: basic-256mb
