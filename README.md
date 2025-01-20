@@ -1,13 +1,9 @@
-# n8n-render
+# n8n-render-blueprint
 
-Successfull installation of n8n on Render using Docker.
+Forked from [the original](https://github.com/ready4mars/n8n-render) because it has been abandoned with deprecated settings which have been removed from Render, and has a missing `WEBHOOK_URL` environment variable which should really be set or else n8n thinks it's being run on localhost.
 
-To make it run just open Render Dashboard and use this git as Blueprint.
+This repository is configured to deploy a basic web service + docker container. To use it, fork this repo and then make the following modifications to `blueprint.yaml`
 
-Important note if using disk on Render: Keep the mountPath as is, otherwise n8n won't change the data.
-
-The .env file contain examples of lines that can be added manually on Environment Variables on Render after install.
-
-To change the webhook URL from localhost to your domain, for example, just add the var WEBHOOK_URL followed by the full URL.
-
-Version 0.224.1
+1. Change the value of `WEBHOOK_URL` to wherever you're planning to host n8n.
+2. Optional: Change the database plan to [an available option here](https://render.com/docs/blueprint-spec#essential-fields-1). Default: Starter - 0.1vcpu, 256MB RAM.
+3. Optional: Change the web service plan to [an available option here](https://render.com/docs/blueprint-spec#essential-fields-1). Default: Standard - 1vcpu, 2GB RAM.
